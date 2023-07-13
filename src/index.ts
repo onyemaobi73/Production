@@ -12,7 +12,7 @@ const port: number = realport;
 const app: Application = express();
 mainApp(app);
 
-const server = app.listen(port, () => {
+const server = app.listen(process.env.APPLICATION_PORT||port, () => {
   console.log("");
   dbConnect()
   console.log("server is now live");
